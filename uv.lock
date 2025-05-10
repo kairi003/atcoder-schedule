@@ -4,13 +4,12 @@ requires-python = ">=3.9"
 
 [[package]]
 name = "atcoder-schedule"
-version = "0.1.0"
-source = { virtual = "." }
+version = "0.1.2"
+source = { editable = "." }
 dependencies = [
     { name = "beautifulsoup4" },
     { name = "lxml" },
     { name = "requests" },
-    { name = "slack-sdk" },
 ]
 
 [package.dev-dependencies]
@@ -23,7 +22,6 @@ requires-dist = [
     { name = "beautifulsoup4", specifier = ">=4.13.4" },
     { name = "lxml", specifier = ">=5.4.0" },
     { name = "requests", specifier = ">=2.32.3" },
-    { name = "slack-sdk", specifier = ">=3.35.0" },
 ]
 
 [package.metadata.requires-dev]
@@ -271,15 +269,6 @@ wheels = [
     { url = "https://edge.artifactory.corp.yahoo.co.jp:4443/artifactory/api/pypi/apj-pypi/packages/packages/22/e6/7ed70048e89b01d728ccc950557a17ecf8df4127b08a56944b9d0bae61bc/ruff-0.11.9-py3-none-win32.whl", hash = "sha256:7fe1bc950e7d7b42caaee2a8a3bc27410547cc032c9558ee2e0f6d3b209e845a" },
     { url = "https://edge.artifactory.corp.yahoo.co.jp:4443/artifactory/api/pypi/apj-pypi/packages/packages/90/36/1da5d566271682ed10f436f732e5f75f926c17255c9c75cefb77d4bf8f10/ruff-0.11.9-py3-none-win_amd64.whl", hash = "sha256:52edaa4a6d70f8180343a5b7f030c7edd36ad180c9f4d224959c2d689962d964" },
     { url = "https://edge.artifactory.corp.yahoo.co.jp:4443/artifactory/api/pypi/apj-pypi/packages/packages/40/f7/70aad26e5877c8f7ee5b161c4c9fa0100e63fc4c944dc6d97b9c7e871417/ruff-0.11.9-py3-none-win_arm64.whl", hash = "sha256:bcf42689c22f2e240f496d0c183ef2c6f7b35e809f12c1db58f75d9aa8d630ca" },
-]
-
-[[package]]
-name = "slack-sdk"
-version = "3.35.0"
-source = { registry = "https://edge.artifactory.corp.yahoo.co.jp:4443/artifactory/api/pypi/apj-pypi/simple" }
-sdist = { url = "https://edge.artifactory.corp.yahoo.co.jp:4443/artifactory/api/pypi/apj-pypi/packages/packages/32/a5/13077a5696ded22cc955ff6314028b7e6140b1c989b19ca27a6b26590e6e/slack_sdk-3.35.0.tar.gz", hash = "sha256:8183b6cbf26a0c1e2441478cd9c0dc4eef08d60c1394cfdc9a769e309a9b6459" }
-wheels = [
-    { url = "https://edge.artifactory.corp.yahoo.co.jp:4443/artifactory/api/pypi/apj-pypi/packages/packages/32/8e/eed71dc79a187ba32681f12a104786ab89355bc474082211d92e1fba6bcf/slack_sdk-3.35.0-py2.py3-none-any.whl", hash = "sha256:00933d171fbd8a068b321ebb5f89612cc781d3183d8e3447c85499eca9d865be" },
 ]
 
 [[package]]

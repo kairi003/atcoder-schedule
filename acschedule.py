@@ -3,6 +3,7 @@ import json
 import warnings
 import zoneinfo
 from datetime import datetime
+from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup
@@ -39,7 +40,7 @@ def main():
                 "start_time": dt.astimezone(tz).isoformat(),
                 "timestamp": int(dt.timestamp()),
                 "name": tr.select_one("td:nth-of-type(2) a").text,
-                "url": tr.select_one("td:nth-of-type(2) a")["href"],
+                "url": urljoin(URL, tr.select_one("td:nth-of-type(2) a")["href"]),
                 "duration": tr.select_one("td:nth-of-type(3)").text,
                 "rated_range": tr.select_one("td:nth-of-type(4)").text,
             }

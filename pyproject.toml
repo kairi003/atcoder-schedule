@@ -1,14 +1,13 @@
 [project]
 name = "atcoder-schedule"
-version = "0.1.1"
+version = "0.1.2"
 description = "CLI tool to get the schedule of AtCoder contests."
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
     "beautifulsoup4>=4.13.4",
     "lxml>=5.4.0",
-    "requests>=2.32.3",
-    "slack-sdk>=3.35.0",
+    "requests>=2.32.3"
 ]
 
 [project.scripts]
@@ -22,6 +21,7 @@ dev = [
 [tool.uv]
 index-url = "https://edge.artifactory.corp.yahoo.co.jp:4443/artifactory/api/pypi/apj-pypi/simple"
 python-downloads = "manual"
+package = true
 
 [tool.ruff.lint]
 select = [
