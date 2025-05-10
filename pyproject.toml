@@ -1,6 +1,6 @@
 [project]
 name = "atcoder-schedule"
-version = "0.1.2"
+version = "0.1.3"
 description = "CLI tool to get the schedule of AtCoder contests."
 readme = "README.md"
 requires-python = ">=3.9"

@@ -1,5 +1,6 @@
 import argparse
 import json
+import re
 import warnings
 import zoneinfo
 from datetime import datetime
@@ -34,13 +35,17 @@ def main():
     table = soup.select_one("#contest-table-upcoming tbody")
     for tr in table.find_all("tr"):
         try:
-            dt = datetime.fromisoformat(tr.select_one("td:nth-of-type(1) time").text)
+            # Fix timezone format for python<3.11
+            time_text = tr.select_one("td:nth-of-type(1) time").text
+            time_text = re.sub(r"(\+\d\d)(\d\d)$", r"\1:\2", time_text)
+            dt = datetime.fromisoformat(time_text)
             tz = zoneinfo.ZoneInfo(args.timezone)
+            contest_link = tr.select_one("td:nth-of-type(2) a")
             data = {
                 "start_time": dt.astimezone(tz).isoformat(),
                 "timestamp": int(dt.timestamp()),
-                "name": tr.select_one("td:nth-of-type(2) a").text,
-                "url": urljoin(URL, tr.select_one("td:nth-of-type(2) a")["href"]),
+                "name": contest_link.text,
+                "url": urljoin(URL, contest_link["href"]),
                 "duration": tr.select_one("td:nth-of-type(3)").text,
                 "rated_range": tr.select_one("td:nth-of-type(4)").text,
             }
