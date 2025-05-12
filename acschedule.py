@@ -11,8 +11,7 @@ from bs4 import BeautifulSoup
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Get upcoming AtCoder contests.")
-    parser.description = "CLI tool to get the schedule of AtCoder contests"
+    parser = argparse.ArgumentParser(description="Get upcoming AtCoder contests")
     parser.add_argument(
         "-l",
         "--lang",

@@ -13,7 +13,7 @@ pip install git+https://github.com/kairi003/atcoder-schedule.git
 ```
 usage: acschedule.py [-h] [-l {ja,en}] [-z TIMEZONE]
 
-CLI tool to get the schedule of AtCoder contests
+Get upcoming AtCoder contests
 
 options:
   -h, --help            show this help message and exit
