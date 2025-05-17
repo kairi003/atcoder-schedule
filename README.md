@@ -5,7 +5,7 @@ CLI tool to get the schedule of AtCoder contests.
 ## Installation
 
 ```bash
-pip install git+https://github.com/kairi003/atcoder-schedule.git
+pip install atcoder-schedule
 ```
 
 ## Usage

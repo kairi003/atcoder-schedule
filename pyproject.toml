@@ -1,27 +1,33 @@
 [project]
 name = "atcoder-schedule"
-version = "0.1.3"
+version = "0.2.0"
 description = "CLI tool to get the schedule of AtCoder contests."
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
-    "beautifulsoup4>=4.13.4",
-    "lxml>=5.4.0",
-    "requests>=2.32.3"
+    "beautifulsoup4[lxml]>=4.13.4",
+    "requests>=2.32.3",
 ]
 
 [project.scripts]
-atcoder-schedule = "acschedule:main"
+atcoder-schedule = "acschedule:cli"
 
 [dependency-groups]
 dev = [
-    "ruff>=0.11.9",
+    "pytest>=8.3.5",
+    "requests-mock>=1.12.1",
+    "ruff>=0.11.10",
+    "types-requests>=2.32.0.20250515",
 ]
 
 [tool.uv]
-index-url = "https://edge.artifactory.corp.yahoo.co.jp:4443/artifactory/api/pypi/apj-pypi/simple"
-python-downloads = "manual"
 package = true
+
+[[tool.uv.index]]
+name = "testpypi"
+url = "https://test.pypi.org/simple/"
+publish-url = "https://test.pypi.org/legacy/"
+explicit = true
 
 [tool.ruff.lint]
 select = [
