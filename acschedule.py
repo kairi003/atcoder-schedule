@@ -3,8 +3,9 @@ import json
 import re
 import warnings
 import zoneinfo
-from collections.abc import Generator
+from collections.abc import Generator, Sequence
 from datetime import datetime
+from typing import Optional
 from urllib.parse import urljoin
 
 import requests
@@ -37,7 +38,7 @@ def parse_schedules(lang: str, timezone: str) -> Generator[dict, None, None]:
             continue
 
 
-def cli(args=None) -> None:
+def cli(args: Optional[Sequence[str]] = None) -> None:
     parser = argparse.ArgumentParser(description="Get upcoming AtCoder contests")
     parser.add_argument(
         "-l",
