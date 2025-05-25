@@ -1,6 +1,6 @@
 # atcoder-schedule
 
-CLI tool to get the schedule of AtCoder contests.
+CLI tool to get the schedule of AtCoder contests from https://atcoder.jp/contests.
 
 ## Installation
 
