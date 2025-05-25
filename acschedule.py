@@ -11,6 +11,8 @@ from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup
 
+__version__ = "0.2.3"
+
 
 def parse_schedules(lang: str, timezone: str) -> Generator[dict, None, None]:
     URL = f"https://atcoder.jp/contests/?lang={lang}"
@@ -39,21 +41,28 @@ def parse_schedules(lang: str, timezone: str) -> Generator[dict, None, None]:
 
 
 def cli(args: Optional[Sequence[str]] = None) -> None:
-    parser = argparse.ArgumentParser(description="Get upcoming AtCoder contests")
+    parser = argparse.ArgumentParser(description="Get the schedule of AtCoder contests")
     parser.add_argument(
         "-l",
         "--lang",
         type=str,
         default="ja",
         choices=["ja", "en"],
-        help="Language for the contest page",
+        help="set language for the contest page",
     )
     parser.add_argument(
         "-z",
         "--timezone",
         type=str,
         default="Asia/Tokyo",
-        help="Timezone for the contest start time",
+        help="set timezone for the contest start time",
+    )
+    parser.add_argument(
+        "-V",
+        "--version",
+        action="version",
+        version=__version__,
+        help="show program's version number and exit",
     )
     _args = parser.parse_args(args)
     for contest in parse_schedules(_args.lang, _args.timezone):

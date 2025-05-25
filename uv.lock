@@ -4,7 +4,6 @@ requires-python = ">=3.9"
 
 [[package]]
 name = "atcoder-schedule"
-version = "0.2.1"
 source = { editable = "." }
 dependencies = [
     { name = "beautifulsoup4", extra = ["lxml"] },

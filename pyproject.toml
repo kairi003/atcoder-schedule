@@ -1,6 +1,10 @@
+[build-system]
+requires = ["setuptools", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "atcoder-schedule"
-version = "0.2.2"
+dynamic = ["version"]
 description = "CLI tool to get the schedule of AtCoder contests."
 readme = "README.md"
 requires-python = ">=3.9"
@@ -13,6 +17,9 @@ dependencies = [
 [project.urls]
 Homepage = "https://github.com/kairi003/atcoder-schedule"
 Repository = "https://github.com/kairi003/atcoder-schedule.git"
+
+[tool.setuptools.dynamic]
+version = {attr = "acschedule.__version__"}
 
 [project.scripts]
 atcoder-schedule = "acschedule:cli"
