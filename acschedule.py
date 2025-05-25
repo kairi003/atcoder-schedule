@@ -11,7 +11,7 @@ from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup
 
-__version__ = "0.2.3"
+__version__ = "0.2.4"
 
 
 def parse_schedules(lang: str, timezone: str) -> Generator[dict, None, None]:
@@ -41,7 +41,9 @@ def parse_schedules(lang: str, timezone: str) -> Generator[dict, None, None]:
 
 
 def cli(args: Optional[Sequence[str]] = None) -> None:
-    parser = argparse.ArgumentParser(description="Get the schedule of AtCoder contests")
+    parser = argparse.ArgumentParser(
+        description="Get the schedule of AtCoder contests in JSON Lines"
+    )
     parser.add_argument(
         "-l",
         "--lang",
