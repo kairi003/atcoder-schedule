@@ -20,9 +20,11 @@ def atcoder_mock(requests_mock: RequestsMocker) -> RequestsMocker:
 
 def test_main_ja(atcoder_mock, capsys):
     acschedule.cli(["-l", "ja"])
-    assert capsys.readouterr().out == open("tests/data/ja.jsonl").read()
+    with open("tests/data/ja.jsonl", encoding="utf-8") as f:
+        assert capsys.readouterr().out == f.read()
 
 
 def test_main_en(atcoder_mock, capsys):
     acschedule.cli(["-l", "en", "-z", "UTC"])
-    assert capsys.readouterr().out == open("tests/data/en.jsonl").read()
+    with open("tests/data/en.jsonl", encoding="utf-8") as f:
+        assert capsys.readouterr().out == f.read()

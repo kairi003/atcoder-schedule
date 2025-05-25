@@ -1,13 +1,18 @@
 [project]
 name = "atcoder-schedule"
-version = "0.2.1"
+version = "0.2.2"
 description = "CLI tool to get the schedule of AtCoder contests."
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
     "beautifulsoup4[lxml]>=4.13.4",
     "requests>=2.32.3",
+    "tzdata>=2025.2",
 ]
+
+[project.urls]
+Homepage = "https://github.com/kairi003/atcoder-schedule"
+Repository = "https://github.com/kairi003/atcoder-schedule.git"
 
 [project.scripts]
 atcoder-schedule = "acschedule:cli"
